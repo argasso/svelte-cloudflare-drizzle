@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1745187312472,
+      "tag": "0000_square_adam_destine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1745432827173,
+      "tag": "0001_certain_rage",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1745502567043,
+      "tag": "0002_bumpy_lily_hollister",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1745691302229,
+      "tag": "0003_pale_robin_chapel",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1745691682106,
+      "tag": "0004_furry_flatman",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1745706859495,
+      "tag": "0005_moaning_shiver_man",
+      "breakpoints": true
+    }
+  ]
+}

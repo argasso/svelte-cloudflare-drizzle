@@ -16,7 +16,14 @@
 		"db:migrate": "drizzle-kit migrate",
 		"db:studio": "drizzle-kit studio",
 		"deploy": "npm run build && wrangler pages deploy",
-		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
+		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate:local": "wrangler d1 migrations apply svelte-cloudflare-drizzle --local",
+		"db:migrate:prod": "wrangler d1 migrations apply svelte-cloudflare-drizzle --remote",
+		"db:migrate:preview": "wrangler d1 migrations apply --env preview svelte-cloudflare-drizzle-preview --remote",
+		"db:studio:local": "LOCAL_DB_PATH=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) drizzle-kit studio",
+		"db:studio:preview": "source .drizzle.env && CLOUDFLARE_DATABASE_ID='cb21a392-3b4b-4d74-9e7c-176a73602f78' drizzle-kit studio",
+		"db:studio:prod": "source .drizzle.env && CLOUDFLARE_DATABASE_ID='8317b933-ab99-4f56-a159-efaed698172e' drizzle-kit studio"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250420.0",
@@ -28,24 +35,33 @@
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
 		"@tailwindcss/vite": "^4.0.0",
+		"bits-ui": "^0.22.0",
+		"clsx": "^2.1.1",
 		"drizzle-kit": "^0.30.2",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
+		"formsnap": "^1.0.1",
 		"globals": "^16.0.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"sveltekit-superforms": "^2.24.1",
+		"tailwind-merge": "^3.2.0",
+		"tailwind-variants": "^1.0.0",
 		"tailwindcss": "^4.0.0",
+		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",
 		"vite": "^6.2.5",
-		"wrangler": "^4.12.0"
+		"wrangler": "^4.12.0",
+		"zod": "^3.24.3"
 	},
 	"dependencies": {
 		"@libsql/client": "^0.14.0",
-		"drizzle-orm": "^0.40.0"
+		"drizzle-orm": "^0.40.0",
+		"drizzle-zod": "^0.7.1"
 	}
 }
